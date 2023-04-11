@@ -1,0 +1,13 @@
+@import "/src/variables.scss";
+
+.filterContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 156px;
+  height: 64px;
+  width: 80%;
+  background-color: $white-color;
+  border-radius: 4px;
+  display: flex;
+}

@@ -1,7 +1,17 @@
+@import "../../variables.scss";
+
 .app {
   text-align: center;
+  position: relative;
 
   &__header {
-    height: 100px;
+    height: 156px;
+    background-color: $primary-color;
+    background-image: url("../../images/bg-header-desktop.svg");
+  }
+
+  &__container {
+    background-color: $background-color;
+    padding-top: 40px;
   }
 }
