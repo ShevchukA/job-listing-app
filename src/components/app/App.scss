@@ -12,6 +12,18 @@
 
   &__container {
     background-color: $background-color;
-    padding-top: 40px;
+    padding-top: 75px;
+    text-align: center;
+  }
+
+  &__attribution {
+    font-size: 11px;
+    text-align: center;
+    background-color: $background-color;
+    padding: 10px 0;
+
+    & a {
+      color: $primary-color;
+    }
   }
 }
