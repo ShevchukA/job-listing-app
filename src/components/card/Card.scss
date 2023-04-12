@@ -45,15 +45,11 @@
     font-size: 22px;
     font-weight: 700;
     margin: 14px 0;
+    color: $neutral-dark-color;
 
-    & a {
-      text-decoration: none;
+    &:hover {
       cursor: pointer;
-      color: $neutral-dark-color;
-
-      &:hover {
-        color: $primary-color;
-      }
+      color: $primary-color;
     }
   }
 

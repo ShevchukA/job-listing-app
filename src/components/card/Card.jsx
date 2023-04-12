@@ -1,4 +1,6 @@
 import "./Card.scss";
+import "../label/Label";
+import Label from "../label/Label";
 
 function Card(props) {
   const {
@@ -23,10 +25,12 @@ function Card(props) {
       </div>
       <div className="card__container">
         <div className="card__infoArea">
-          <div className="card__companyName">{company}</div>
-          <div className="card__positionName">
-            <a>{position}</a>
+          <div className="card__companyName">
+            {company}
+            {newItem && <Label type="new" />}
+            {featured && <Label type="featured" />}
           </div>
+          <div className="card__positionName">{position}</div>
           <div className="card__positionInfo">
             {postedAt} {contract} {location}
           </div>
