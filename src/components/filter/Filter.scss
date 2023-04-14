@@ -11,4 +11,8 @@
   border-radius: 6px;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
   display: flex;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30px;
 }

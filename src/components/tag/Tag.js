@@ -1,7 +1,11 @@
 import "./Tag.scss";
 
 function Tag(props) {
-  return <span className="tag">{props.text}</span>;
+  return (
+    <span className="tag" onClick={() => props.addToFilter(props.text)}>
+      {props.text}
+    </span>
+  );
 }
 
 export default Tag;

@@ -1,7 +1,7 @@
 import "./Filter.scss";
 
-function Filter() {
-  return <div className="filterContainer"></div>;
+function Filter({ children }) {
+  return <div className="filterContainer">{children}</div>;
 }
 
 export default Filter;

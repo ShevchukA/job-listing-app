@@ -18,6 +18,8 @@ function Card(props) {
     tools, //array
   } = props.data;
 
+  const tags = [role, level, ...languages, ...tools];
+
   return (
     <div className="card">
       <div className="card__logo">
@@ -36,13 +38,8 @@ function Card(props) {
           </div>
         </div>
         <div className="card__tagsArea">
-          <Tag text={role} />
-          <Tag text={level} />
-          {languages.map((lang) => (
-            <Tag text={lang} />
-          ))}
-          {tools.map((tool) => (
-            <Tag text={tool} />
+          {tags.map((tag) => (
+            <Tag text={tag} addToFilter={props.addToFilter} />
           ))}
         </div>
       </div>
