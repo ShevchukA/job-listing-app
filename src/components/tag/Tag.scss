@@ -1,0 +1,17 @@
+@import "../../styles.scss";
+
+.tag {
+  margin-left: 20px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background-color: $filter-tablets-color;
+  color: $primary-color;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primary-color;
+    color: $white-color;
+    transition: all 0.2s;
+  }
+}

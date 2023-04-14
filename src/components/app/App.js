@@ -2,16 +2,19 @@ import "./App.scss";
 import Card from "../card/Card";
 import Filter from "../filter/Filter";
 import Data from "../../data/data.json";
+import { useState } from "react";
 
 let filter = true;
 
 function App() {
+  const [list, setList] = useState(Data);
+
   return (
     <div className="app">
       <header className="app__header"></header>
       {filter && <Filter />}
       <div className="app__container">
-        {Data.map((item) => (
+        {list.map((item) => (
           <Card key={item.id} data={item} />
         ))}
       </div>

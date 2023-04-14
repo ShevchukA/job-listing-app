@@ -1,5 +1,5 @@
 import "./Card.scss";
-import "../label/Label";
+import Tag from "../tag/Tag";
 import Label from "../label/Label";
 
 function Card(props) {
@@ -36,7 +36,14 @@ function Card(props) {
           </div>
         </div>
         <div className="card__tagsArea">
-          {role} {level} {languages} {tools}
+          <Tag text={role} />
+          <Tag text={level} />
+          {languages.map((lang) => (
+            <Tag text={lang} />
+          ))}
+          {tools.map((tool) => (
+            <Tag text={tool} />
+          ))}
         </div>
       </div>
     </div>
