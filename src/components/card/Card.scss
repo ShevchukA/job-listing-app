@@ -30,6 +30,7 @@
   }
 
   &__infoArea {
+    flex-shrink: 0;
     display: grid;
     grid-template-columns: auto;
     text-align: left;
@@ -60,7 +61,10 @@
 
   &__tagsArea {
     display: flex;
+    justify-content: end;
+    align-self: center;
+    flex-wrap: wrap;
     flex-direction: row;
-    margin-right: 40px;
+    margin: 0 40px;
   }
 }
