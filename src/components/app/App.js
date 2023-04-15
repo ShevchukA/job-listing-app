@@ -12,7 +12,21 @@ function App() {
   function addFilter(text) {
     const newFilter = new Set([...filterList, text]);
     setFilterList(newFilter);
-    setListOfCards([...listOfCards].filter((card) => newFilter.has(card.role)));
+    setListOfCards(
+      [...listOfCards].filter((card) => {
+        const {
+          role,
+          level,
+          languages, //array
+          tools, //array
+        } = card;
+
+        const tags = [role, level, ...languages, ...tools];
+
+        return [...newFilter].every((item) => tags.includes(item));
+        //карточку если все тэги фильтра есть в тегах карточки
+      })
+    );
   }
 
   function displayCards(list, filterList) {

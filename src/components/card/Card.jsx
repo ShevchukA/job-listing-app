@@ -38,8 +38,8 @@ function Card(props) {
           </div>
         </div>
         <div className="card__tagsArea">
-          {tags.map((tag) => (
-            <Tag text={tag} addToFilter={props.addToFilter} />
+          {tags.map((tag, i) => (
+            <Tag key={i} text={tag} addToFilter={props.addToFilter} />
           ))}
         </div>
       </div>
