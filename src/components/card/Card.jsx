@@ -9,21 +9,16 @@ function Card(props) {
     new: newItem, //change name of property
     featured,
     position,
-    role,
-    level,
     postedAt,
     contract,
     location,
-    languages, //array
-    tools, //array
+    tags,
   } = props.data;
-
-  const tags = [role, level, ...languages, ...tools];
 
   return (
     <div className="card">
       <div className="card__logo">
-        <img src={logo}></img>
+        <img src={logo} alt="logo"></img>
       </div>
       <div className="card__container">
         <div className="card__infoArea">

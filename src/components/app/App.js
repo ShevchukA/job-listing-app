@@ -6,41 +6,23 @@ import Data from "../../data/data.json";
 import { useState } from "react";
 
 function App() {
-  const [listOfCards, setListOfCards] = useState(Data);
+  const data = structuredClone(Data);
+  data.forEach((item) => {
+    item.tags = [item.role, item.level, ...item.languages, ...item.tools];
+  });
+
+  const [listOfCards, setListOfCards] = useState(data);
   const [filterList, setFilterList] = useState(new Set());
 
   function addFilter(text) {
     const newFilter = new Set([...filterList, text]);
     setFilterList(newFilter);
     setListOfCards(
-      [...listOfCards].filter((card) => {
-        const {
-          role,
-          level,
-          languages, //array
-          tools, //array
-        } = card;
-
-        const tags = [role, level, ...languages, ...tools];
-
-        return [...newFilter].every((item) => tags.includes(item));
-        //карточку если все тэги фильтра есть в тегах карточки
-      })
+      [...listOfCards].filter((card) =>
+        //возвращаем карточку, если все тэги фильтра есть в тегах карточки
+        [...newFilter].every((item) => card.tags.includes(item))
+      )
     );
-  }
-
-  function displayCards(list, filterList) {
-    if (filterList.size > 0) {
-      list
-        .filter((item) => filterList.has(item))
-        .map((card) => (
-          <Card key={card.id} data={card} addToFilter={addFilter} />
-        ));
-    } else {
-      list.map((card) => (
-        <Card key={card.id} data={card} addToFilter={addFilter} />
-      ));
-    }
   }
 
   return (
@@ -57,7 +39,6 @@ function App() {
         {listOfCards.map((card) => (
           <Card key={card.id} data={card} addToFilter={addFilter} />
         ))}
-        {/* {displayCards(listOfCards, filterList)} */}
       </div>
       <div className="app__attribution">
         Challenge by{" "}
