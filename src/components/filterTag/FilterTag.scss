@@ -1,0 +1,33 @@
+@import "../../styles.scss";
+
+.filterTag {
+  box-sizing: border-box;
+  height: 30px;
+  margin: 0 10px;
+  padding-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $filter-tablets-color;
+  color: $primary-color;
+  font-weight: 700;
+
+  &__close {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    background-color: $primary-color;
+    color: $white-color;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $neutral-dark-color;
+      color: $white-color;
+      transition: all 0.2s;
+    }
+  }
+}

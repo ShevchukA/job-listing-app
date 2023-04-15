@@ -2,6 +2,7 @@ import "./App.scss";
 import Card from "../card/Card";
 import Filter from "../filter/Filter";
 import Tag from "../tag/Tag";
+import FilterTag from "../filterTag/FilterTag";
 import Data from "../../data/data.json";
 import { useState } from "react";
 
@@ -25,13 +26,15 @@ function App() {
     );
   }
 
+  function removeFromFilter(text) {}
+
   return (
     <div className="app">
       <header className="app__header"></header>
       {filterList.size > 0 && (
         <Filter>
           {[...filterList].map((item, i) => (
-            <Tag key={i} text={item} />
+            <FilterTag key={i} text={item} />
           ))}
         </Filter>
       )}
