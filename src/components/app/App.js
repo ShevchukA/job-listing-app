@@ -1,7 +1,6 @@
 import "./App.scss";
 import Card from "../card/Card";
 import Filter from "../filter/Filter";
-import Tag from "../tag/Tag";
 import FilterTag from "../filterTag/FilterTag";
 import Data from "../../data/data.json";
 import { useState } from "react";
@@ -17,24 +16,32 @@ function App() {
 
   function addFilter(text) {
     const newFilter = new Set([...filterList, text]);
+    displayFilteredCards(newFilter);
+  }
+
+  function removeFilter(text) {
+    const newFilter = new Set([...filterList].filter((item) => item !== text));
+    displayFilteredCards(newFilter);
+  }
+
+  function displayFilteredCards(newFilter) {
     setFilterList(newFilter);
     setListOfCards(
-      [...listOfCards].filter((card) =>
+      data.filter((card) =>
         //возвращаем карточку, если все тэги фильтра есть в тегах карточки
         [...newFilter].every((item) => card.tags.includes(item))
       )
     );
   }
 
-  function removeFromFilter(text) {}
-
   return (
     <div className="app">
       <header className="app__header"></header>
+      {/* если фильтр не фустой, тогда показываем поле фильтра с тегами */}
       {filterList.size > 0 && (
         <Filter>
           {[...filterList].map((item, i) => (
-            <FilterTag key={i} text={item} />
+            <FilterTag key={i} text={item} removeFromFilter={removeFilter} />
           ))}
         </Filter>
       )}
@@ -45,7 +52,7 @@ function App() {
       </div>
       <div className="app__attribution">
         Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        <a href="https://www.frontendmentor.io?ref=challenge">
           Frontend Mentor
         </a>
         . Coded by{" "}

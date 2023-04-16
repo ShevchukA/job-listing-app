@@ -8,6 +8,10 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
+#root {
+  height: 100%;
+}
+
 ::selection {
   color: $white-color;
   background: $primary-color;

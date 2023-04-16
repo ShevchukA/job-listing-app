@@ -1,14 +1,15 @@
 import "./FilterTag.scss";
+import img from "./icon-remove.svg";
 
 function FilterTag(props) {
   return (
-    <span
-      className="filterTag"
-      onClick={() => props.removeFromFilter(props.text)}
-    >
+    <span className="filterTag">
       {props.text}
-      <span className="filterTag__close">
-        {/* <img url="/images/icon-remove.svg" alt="close"></img> */}X
+      <span
+        className="filterTag__close"
+        onClick={() => props.removeFromFilter(props.text)}
+      >
+        <img src={img} alt="close"></img>
       </span>
     </span>
   );

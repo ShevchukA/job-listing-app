@@ -11,6 +11,7 @@
   background-color: $filter-tablets-color;
   color: $primary-color;
   font-weight: 700;
+  overflow: hidden;
 
   &__close {
     display: inline-flex;
@@ -21,7 +22,6 @@
     color: $white-color;
     width: 30px;
     height: 30px;
-    overflow: hidden;
 
     &:hover {
       cursor: pointer;
