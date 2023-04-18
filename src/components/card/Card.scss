@@ -59,6 +59,11 @@
     font-weight: 500;
   }
 
+  &__positionInfo span {
+    font-weight: 700;
+    margin: 0 5px;
+  }
+
   &__tagsArea {
     display: flex;
     justify-content: flex-end;

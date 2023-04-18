@@ -29,7 +29,11 @@ function Card(props) {
           </div>
           <div className="card__positionName">{position}</div>
           <div className="card__positionInfo">
-            {postedAt} {contract} {location}
+            {postedAt}
+            <span>&#x2E31;</span>
+            {contract}
+            <span>&#x2E31;</span>
+            {location}
           </div>
         </div>
         <div className="card__tagsArea">
