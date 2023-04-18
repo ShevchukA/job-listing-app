@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://github.com/ShevchukA/job-listing-app/settings/pages)
+- Live Site URL: [Add live site URL here](https://job-listing-study-app.netlify.app)
 
 ## My process
 
