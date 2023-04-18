@@ -24,11 +24,16 @@ function App() {
     displayFilteredCards(newFilter);
   }
 
+  function clearFilter() {
+    const newFilter = new Set();
+    displayFilteredCards(newFilter);
+  }
+
   function displayFilteredCards(newFilter) {
     setFilterList(newFilter);
     setListOfCards(
       data.filter((card) =>
-        //возвращаем карточку, если все тэги фильтра есть в тегах карточки
+        //chose those cards wich have all tags from filter
         [...newFilter].every((item) => card.tags.includes(item))
       )
     );
@@ -37,9 +42,9 @@ function App() {
   return (
     <div className="app">
       <header className="app__header"></header>
-      {/* если фильтр не фустой, тогда показываем поле фильтра с тегами */}
+      {/* if filter is not empty than show filter field with tags */}
       {filterList.size > 0 && (
-        <Filter>
+        <Filter onClearFilter={clearFilter}>
           {[...filterList].map((item, i) => (
             <FilterTag key={i} text={item} removeFromFilter={removeFilter} />
           ))}
