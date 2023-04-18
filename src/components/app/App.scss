@@ -31,3 +31,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .app__container {
+    padding-top: 100px;
+  }
+}
